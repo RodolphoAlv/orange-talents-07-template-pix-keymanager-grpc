@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zup.edu.chavePix";
+option java_outer_classname = "ChavePix";
+option objc_class_prefix = "HLW";
+
+package com.zup.edu.chavePix;
+
+service ChavePixService {
+  rpc cadastraChave (ChavePixRequest) returns (ChavePixResponse);
+}
+
+enum tipoChave {
+  UNKNOWN_KEY = 0;
+  CPF = 1;
+  CELULAR = 2;
+  CHAVE_ALEATORIA = 3;
+}
+
+enum tipoConta {
+  UNKNOWN_ACCOUNT = 0;
+  CORRENTE = 1;
+  POUPANCA = 2;
+}
+
+message ChavePixRequest {
+  string idCliente = 1;
+  tipoChave tipoChave = 2;
+  tipoConta tipoConta = 3;
+}
+
+message ChavePixResponse {
+  int32 pixId = 1;
+}
