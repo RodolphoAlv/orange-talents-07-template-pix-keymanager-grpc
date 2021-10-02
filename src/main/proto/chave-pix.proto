@@ -28,6 +28,7 @@ message ChavePixRequest {
   string idCliente = 1;
   tipoChave tipoChave = 2;
   tipoConta tipoConta = 3;
+  string valorChave = 4;
 }
 
 message ChavePixResponse {

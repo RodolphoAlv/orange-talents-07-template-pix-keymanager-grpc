@@ -43,9 +43,8 @@ dependencies {
     implementation("io.micronaut:micronaut-validation")
 
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
-
+    implementation("io.micronaut:micronaut-http-client")
     testImplementation("io.micronaut:micronaut-http-client")
-
 }
 
 

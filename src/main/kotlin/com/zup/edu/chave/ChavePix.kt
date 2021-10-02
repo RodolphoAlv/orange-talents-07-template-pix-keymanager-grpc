@@ -1,5 +1,6 @@
 package com.zup.edu.chave
 
+import java.util.*
 import javax.persistence.*
 import javax.validation.constraints.NotBlank
 import javax.validation.constraints.NotNull
@@ -20,4 +21,11 @@ class ChavePix(
     @Id
     @GeneratedValue
     var id: Int? = null
+
+    var valorChave: String? = UUID.randomUUID().toString()
+        set(valor) {
+            if(tipoChave == TipoChave.CHAVE_ALEATORIA)
+                return
+            field = valor ?: field
+        }
 }
